@@ -1,6 +1,0 @@
-#!/bin/bash
-
-sudo rm -rf /usr/lib/linuxmint/mintMenu
-sudo cp -R usr /
-mintmenu
-
