@@ -10,58 +10,60 @@
 #export DH_VERBOSE=1
 
 
+%:
+	dh $@
 
 
-CFLAGS = -Wall -g
+#del#CFLAGS = -Wall -g
 
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
+#del#ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+#del#	CFLAGS += -O0
+#del#else
+#del#	CFLAGS += -O2
+#del#endif
 
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
+#del#configure: configure-stamp
+#del#configure-stamp:
+#del#	dh_testdir
 	# Add here commands to configure the package.
 
-	touch configure-stamp
+#del#	touch configure-stamp
 
 
-build: build-stamp
+#del#build: build-stamp
 
-build-stamp: configure-stamp 
-	dh_testdir
-	touch build-stamp
+#del#build-stamp: configure-stamp 
+#del#	dh_testdir
+#del#	touch build-stamp
 
-clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp configure-stamp
-	dh_clean 
+#del#clean:
+#del#	dh_testdir
+#del#	dh_testroot
+#del#	rm -f build-stamp configure-stamp
+#del#	dh_clean 
 
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k 
-	dh_installdirs
+#del#install: build
+#del#	dh_testdir
+#del#	dh_testroot
+#del#	dh_clean -k 
+#del#	dh_installdirs
 
 	# Add here commands to install the package into debian/mintmenu.
 	#$(MAKE) install DESTDIR=$(CURDIR)/debian/mintmenu
-	mkdir -p $(CURDIR)/debian/mintmenu
-	cp -r $(CURDIR)/usr $(CURDIR)/debian/mintmenu/
+#del#	mkdir -p $(CURDIR)/debian/mintmenu
+#del#	cp -r $(CURDIR)/usr $(CURDIR)/debian/mintmenu/
 
 # Build architecture-independent files here.
-binary-indep: build install
+#del#binary-indep: build install
 # We have nothing to do by default.
 
 # Build architecture-dependent files here.
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs 
-	dh_installdocs
-	dh_installexamples
+#del#binary-arch: build install
+#del#	dh_testdir
+#del#	dh_testroot
+#del#	dh_installchangelogs 
+#del#	dh_installdocs
+#del#	dh_installexamples
 #	dh_install
 #	dh_installmenu
 #	dh_installdebconf	
@@ -73,18 +75,18 @@ binary-arch: build install
 #	dh_installinit
 #	dh_installcron
 #	dh_installinfo
-	dh_installman
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
+#del#	dh_installman
+#del#	dh_link
+#del#	dh_strip
+#del#	dh_compress
+#del#	dh_fixperms
 #	dh_perl
 #	dh_makeshlibs
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
+#del#	dh_installdeb
+#del#	dh_shlibdeps
+#del#	dh_gencontrol
+#del#	dh_md5sums
+#del#	dh_builddeb
 
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install configure
+#del#binary: binary-indep binary-arch
+#del#.PHONY: build clean binary-indep binary-arch binary install configure
